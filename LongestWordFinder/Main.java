@@ -1,15 +1,14 @@
+import java.io.File;
 import java.io.FileNotFoundException;
 
-
 public class Main {
-    private static String fileName = "F://Java/simpletext.txt";
-
-    public static String getFileName() {
-        return fileName;
-    }
 
     public static void main(String args[]) throws FileNotFoundException {
-        WordFinder.findWord();
-    }
+        String path = "resources/text";
+        File file = new File(path);
 
+        String longestWord =  TextUtil.getLongestWord(file);
+
+        System.out.println(String.format("The longest word is - %s", longestWord));
+    }
 }
